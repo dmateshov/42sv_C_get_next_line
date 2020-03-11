@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmatesho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmatesho <dmatesho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 17:50:08 by dmatesho          #+#    #+#             */
-/*   Updated: 2020/03/04 13:48:50 by dmatesho         ###   ########.fr       */
+/*   Updated: 2020/03/09 20:06:08 by dmatesho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
+# include <stdio.h>
+# include <fcntl.h>
+
+typedef struct      get_next_line
+{
+    int             fd;
+    char            *remaining;
+    get_next_line   *next;
+}                   GNL
 
 int	get_next_line(const int fd, char **line);
 
